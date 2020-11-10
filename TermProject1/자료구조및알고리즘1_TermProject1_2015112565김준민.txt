@@ -43,7 +43,7 @@ public class TermProject {
 		int b = scan.nextInt();
 		
 		if (a>N || b>N) System.out.print("N보다 작은 값을 입력하세요.");
-		
+		else {
 
 		for(int l = 0; l < arr.length; l++) {
 			
@@ -76,6 +76,7 @@ public class TermProject {
 		System.out.println("최댓값은: " + max + "입니다.");
 		System.out.println("최솟값은: " + min + "입니다.");
 	}
+}
 }
 
 
