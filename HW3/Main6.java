@@ -1,0 +1,50 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main6{
+	public static void main(String[] args) {
+		Stack stack = new Stack();
+		Queue queue = new LinkedList();
+		Random ran_num = new Random();
+		Scanner scanner = new Scanner(System.in);
+
+		
+		System.out.print("입력받을 숫자는? : ");
+		int num = scanner.nextInt();
+
+		
+
+		int queue_num;	
+		for(int i=0;i<num;i++) {
+			queue_num = (int)(Math.random()*10000)+1;
+			queue.add(queue_num);
+		}
+
+		System.out.println("queue : " + queue);
+		stack.push(queue.poll());
+
+		
+		//System.out.println("stack : " + stack);
+
+		while(!queue.isEmpty()) {
+			if( (int)stack.peek() < (int)queue.peek() ) {
+				queue.add(stack.pop());
+			if(stack.isEmpty()) {
+				stack.push(queue.poll());	
+			}
+			}else{
+				stack.push(queue.poll());
+			}	
+		}	
+		for(int i=0; i < num; i++) {
+			System.out.println("정렬된 " + (i+1) +"번째 결과는:" + stack.pop());
+		}
+		//while(!stack.isEmpty()) {
+			//System.out.println(stack.pop());
+		//}
+		//System.out.println(queue);	
+	}
+}
