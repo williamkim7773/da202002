@@ -22,7 +22,7 @@ public class TermProject3 {
 		
 		
 		
-		int[] arr = new int[N+1];		//  크기가 9999인 배열 생성
+		int[] arr = new int[N+1];		
 		
 		
 		int data = 0;
